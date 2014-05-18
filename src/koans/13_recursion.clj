@@ -20,7 +20,11 @@
       (recur (rest coll) (cons (first coll) reversed)))))
 
 (defn factorial [n]
-  __)
+  (loop [n   n
+         acc 1]
+    (if (= n 1)
+      acc
+      (recur (- n 1) (* n acc)))))
 
 (meditations
   "Recursion ends with a base case"
