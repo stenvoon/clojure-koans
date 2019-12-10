@@ -1,4 +1,4 @@
-(ns koans.06-functions
+(ns koans.07-functions
   (:require [koan-engine.core :refer :all]))
 
 (defn multiply-by-ten [n]
@@ -23,7 +23,7 @@
   (= 15 (#(+ %1 %2 %3) 4 5 6))
 
   "Arguments can also be skipped"
-  (= 30 (#(* 15 %2) 1 2))
+  (= __ (#(str "AA" %2) "bb" "CC"))
 
   "One function can beget another"
   (= 9 (((fn [] +)) 4 5))
