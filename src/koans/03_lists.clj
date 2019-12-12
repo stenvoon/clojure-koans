@@ -21,7 +21,7 @@
   (= '() (rest '(100)))
 
   "Construction by adding an element to the front is easy"
-  (= '(:a :b :c :d :e) (cons :a '(:b :c :d :e)))
+  (= (list :a :b :c :d :e) (cons :a '(:b :c :d :e)))
 
   "Conjoining an element to a list isn't hard either"
   (= '(:e :a :b :c :d) (conj '(:a :b :c :d) :e))

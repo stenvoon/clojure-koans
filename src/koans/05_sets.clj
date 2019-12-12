@@ -13,10 +13,10 @@
   (= #{1 2 3 4 5} (set '(1 1 2 2 3 3 4 4 5 5)))
 
   "You can ask clojure for the union of two sets"
-  (= __ (set/union #{1 2 3 4} #{2 3 5}))
+  (= #{1 2 3 4 5} (set/union #{1 2 3 4} #{2 3 5}))
 
   "And also the intersection"
-  (= __ (set/intersection #{1 2 3 4} #{2 3 5}))
+  (= #{2 3} (set/intersection #{1 2 3 4} #{2 3 5}))
 
   "But don't forget about the difference"
-  (= __ (set/difference #{1 2 3 4 5} #{2 3 5})))
+  (= #{1 4} (set/difference #{1 2 3 4 5} #{2 3 5})))

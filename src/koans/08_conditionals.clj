@@ -40,8 +40,8 @@
 
   "In case of emergency, go fast"
   (= "pretty fast"
-     (explain-exercise-velocity __))
+     (explain-exercise-velocity :bicycling))
 
   "But admit it when you don't know what to do"
-  (= __
+  (= "is that even exercise?"
      (explain-exercise-velocity :watching-tv)))
