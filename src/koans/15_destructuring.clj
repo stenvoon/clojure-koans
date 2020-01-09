@@ -15,14 +15,14 @@
   (= (str "An Oxford comma list of apples, "
           "oranges, "
           "and pears.")
-     ((fn [[a b c]] __)
+     ((fn [[a b c]] (str "An Oxford comma list of " a ", " b ", and " c "."))
       ["apples" "oranges" "pears"]))
 
   "Or in let expressions"
   (= "Rich Hickey aka The Clojurer aka Go Time aka Lambda Guru"
      (let [[first-name last-name & aliases]
            (list "Rich" "Hickey" "The Clojurer" "Go Time" "Lambda Guru")]
-       __))
+       (str first-name " " (clojure.string/join " aka " (cons last-name aliases)))))
 
   "You can regain the full argument if you like arguing"
   (= {:original-parts ["Stephen" "Hawking"] :named-parts {:first "Stephen" :last "Hawking"}}
@@ -32,12 +32,12 @@
   "Break up maps by key"
   (= "123 Test Lane, Testerville, TX"
      (let [{street-address :street-address, city :city, state :state} test-address]
-      (str street-address ", " city ", " state)))
+      (clojure.string/join ", " (list street-address city state))))
 
   "Or more succinctly"
   (= "123 Test Lane, Testerville, TX"
      (let [{:keys [street-address city state]} test-address]
-       (str street-address ", " city ", " state)))
+       (clojure.string/join ", " [street-address city state])))
 
   "All together now!"
   (= "Test Testerson, 123 Test Lane, Testerville, TX"
